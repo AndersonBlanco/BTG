@@ -12,7 +12,7 @@ import SignUp from "./SignUp";
 export default function SignIn({navigation}){
 
  const SignInButton = (
-    <TouchableOpacity style = {styles.SignInButton}>
+    <TouchableOpacity style = {styles.SignInButton} onPress={() => navigation.replace("home")}>
         <Text style = {styles.signInText}>SignIn</Text>
     </TouchableOpacity>
  )
