@@ -1,12 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
-
+import SignIn from './Pages/SignIn';
+import SignUp from './Pages/SignUp';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+const Stack = createNativeStackNavigator(); 
 export default function App() {
   return (
-    <View style={styles.container}>
-    <Text>Hello Universe</Text>
-    <Button title="Test" onPress={()=>alert("Hello Universe")}/>
-    </View>
+    <NavigationContainer theme = {{colors:{background: "transparent"}}}>
+      <Stack.Navigator screenOptions={{headerShown: false, animation: "none"}}>
+        <Stack.Screen name = 'signin' component={SignIn}/>
+        <Stack.Screen name = 'signup' component={SignUp}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
